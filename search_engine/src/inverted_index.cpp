@@ -2,7 +2,6 @@
 #include <vector>
 #include <map>
 #include <thread>
-//#include <utility>
 #include "inverted_index.h"
 
 // Данный оператор необходим для проведения тестовых сценариев
@@ -57,16 +56,6 @@ void Flow(std::vector <std::string> flow, std::map<std::string, std::vector<Entr
 }
 
 InvertedIndex::InvertedIndex() = default;
-
-/**
- * Данное значение оператора необходимо для проведения тестового сценария,
- * в основной программе значение пробрасывается с main.
- */
-[[maybe_unused]] int max_responses = 5;
-
-std::vector<std::string> streams[3];//ко-во ядер/потоков/нитей ПОКА ТОЛЬКО ОДНА ЦИФРА
-int streamsSize = sizeof(streams) / sizeof(streams[0]);
-[[maybe_unused]] int streamsSizeTemp = streamsSize;
     /**
     * Обновить или заполнить базу документов, по которой будем совершать
 поиск
@@ -105,7 +94,3 @@ std::vector<Entry> InvertedIndex::GetWordCount(const std::string& word) {
             temp = it.second;
     return temp;
 }
-
-/*std::vector<std::string> docs;//список содержимого документов или коллекция для хранения текстов
-// документов, ..деляет doc_id дл..
-std::map<std::string, std::vector<Entry>> freq_dictionary;//частотный словарь*/

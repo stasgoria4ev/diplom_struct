@@ -17,11 +17,11 @@ public:
      * Данное значение оператора необходимо для проведения тестового сценария,
      * в основной программе значение пробрасывается с main.
      */
-    [[maybe_unused]] int max_responses{};
+    int max_responses = 5;
 
     std::vector<std::string> streams[3];//ко-во ядер/потоков/нитей ПОКА ТОЛЬКО ОДНА ЦИФРА
-    int streamsSize{};
-    int streamsSizeTemp{};
+    int streamsSize = sizeof(streams) / sizeof(streams[0]);
+    int streamsSizeTemp = streamsSize;
     /**
     * Обновить или заполнить базу документов, по которой будем совершать
 поиск

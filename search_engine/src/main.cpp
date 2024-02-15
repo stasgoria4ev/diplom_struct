@@ -1,4 +1,3 @@
-//#include <iostream>
 #include "converter.cpp"
 #include "inverted_index.cpp"
 #include "server.cpp"

@@ -42,6 +42,18 @@ include CMakeFiles/rules.ninja
 cmake_ninja_workdir = C$:/Users/stas/CLionProjects/search_engine/cmake-build-debug/
 
 #############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
+
+#############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
@@ -109,6 +121,18 @@ build install/strip: phony CMakeFiles/install/strip.util
 # Write statements declared in CMakeLists.txt:
 # C:/Users/stas/CLionProjects/search_engine/CMakeLists.txt
 # =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build nlohmann_json/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\nlohmann_json && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build nlohmann_json/test: phony nlohmann_json/CMakeFiles/test.util
 
 
 #############################################
@@ -181,6 +205,122 @@ build nlohmann_json/install/strip: phony nlohmann_json/CMakeFiles/install/strip.
 # =============================================================================
 
 # =============================================================================
+# Object build statements for EXECUTABLE target search_engine
+
+
+#############################################
+# Order-only phony target for search_engine
+
+build cmake_object_order_depends_target_search_engine: phony || src/CMakeFiles/search_engine.dir
+
+build src/CMakeFiles/search_engine.dir/main.cpp.obj: CXX_COMPILER__search_engine_Debug C$:/Users/stas/CLionProjects/search_engine/src/main.cpp || cmake_object_order_depends_target_search_engine
+  DEP_FILE = src\CMakeFiles\search_engine.dir\main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include
+  OBJECT_DIR = src\CMakeFiles\search_engine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\search_engine.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target search_engine
+
+
+#############################################
+# Link the executable C:\Users\stas\CLionProjects\search_engine\search_engine.exe
+
+build C$:/Users/stas/CLionProjects/search_engine/search_engine.exe: CXX_EXECUTABLE_LINKER__search_engine_Debug src/CMakeFiles/search_engine.dir/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = src\CMakeFiles\search_engine.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = C:\Users\stas\CLionProjects\search_engine\search_engine.exe
+  TARGET_IMPLIB = src\libsearch_engine.dll.a
+  TARGET_PDB = search_engine.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build src/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/test: phony src/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\stas\CLionProjects\search_engine -BC:\Users\stas\CLionProjects\search_engine\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/CMakeFiles/install.util: CUSTOM_COMMAND src/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/install: phony src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/CMakeFiles/install/local.util: CUSTOM_COMMAND src/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/install/local: phony src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/install/strip: phony src/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/stas/CLionProjects/search_engine/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Google_Tests_run
 
 
@@ -189,12 +329,40 @@ build nlohmann_json/install/strip: phony nlohmann_json/CMakeFiles/install/strip.
 
 build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/gtest.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/gtest.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\gtest.cpp.obj.d
+build Google_tests/CMakeFiles/Google_Tests_run.dir/index_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/index_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\index_tests.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
   OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+
+build Google_tests/CMakeFiles/Google_Tests_run.dir/server_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/server_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\server_tests.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+
+build Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/inverted_index.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/src/inverted_index.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src\inverted_index.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src
+
+build Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/server.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/src/server.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src\server.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src
+
+build Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/converter.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/src/converter.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src\converter.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src
 
 
 # =============================================================================
@@ -202,17 +370,30 @@ build Google_tests/CMakeFiles/Google_Tests_run.dir/gtest.cpp.obj: CXX_COMPILER__
 
 
 #############################################
-# Link the executable Google_tests\Google_Tests_run.exe
+# Link the executable C:\Users\stas\CLionProjects\search_engine\Google_tests\Google_Tests_run.exe
 
-build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/gtest.cpp.obj | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe Google_tests/Google_Tests_run[1]_tests.cmake | ${cmake_ninja_workdir}Google_tests/Google_Tests_run[1]_tests.cmake: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/index_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/server_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/inverted_index.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/server.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/converter.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
-  LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  POST_BUILD = cd .
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -D TEST_TARGET=Google_Tests_run -D TEST_EXECUTABLE=C:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=Google_Tests_run_TESTS -D CTEST_FILE=C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/Google_Tests_run[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/GoogleTestAddTests.cmake""
   PRE_LINK = cd .
-  TARGET_FILE = Google_tests\Google_Tests_run.exe
+  RESTAT = 1
+  TARGET_FILE = C:\Users\stas\CLionProjects\search_engine\Google_tests\Google_Tests_run.exe
   TARGET_IMPLIB = Google_tests\libGoogle_Tests_run.dll.a
   TARGET_PDB = Google_Tests_run.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build Google_tests/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Google_tests/test: phony Google_tests/CMakeFiles/test.util
 
 
 #############################################
@@ -283,6 +464,18 @@ build Google_tests/install/strip: phony Google_tests/CMakeFiles/install/strip.ut
 # Write statements declared in CMakeLists.txt:
 # C:/Users/stas/CLionProjects/search_engine/Google_tests/CMakeLists.txt
 # =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build Google_tests/lib/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests\lib && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Google_tests/lib/test: phony Google_tests/lib/CMakeFiles/test.util
 
 
 #############################################
@@ -398,7 +591,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_COMPILER__gmock_main_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17
-  INCLUDES = -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googlemock/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googlemock -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
+  INCLUDES = -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googlemock/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googlemock
   OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
   OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src
 
@@ -417,6 +610,18 @@ build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_te
   PRE_LINK = cd .
   TARGET_FILE = lib\libgmock_main.a
   TARGET_PDB = gmock_main.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build Google_tests/lib/googlemock/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests\lib\googlemock && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Google_tests/lib/googlemock/test: phony Google_tests/lib/googlemock/CMakeFiles/test.util
 
 
 #############################################
@@ -554,6 +759,18 @@ build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_te
 
 
 #############################################
+# Utility command for test
+
+build Google_tests/lib/googletest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests\lib\googletest && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Google_tests/lib/googletest/test: phony Google_tests/lib/googletest/CMakeFiles/test.util
+
+
+#############################################
 # Utility command for edit_cache
 
 build Google_tests/lib/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
@@ -618,115 +835,11 @@ build Google_tests/lib/googletest/CMakeFiles/install/strip.util: CUSTOM_COMMAND 
 build Google_tests/lib/googletest/install/strip: phony Google_tests/lib/googletest/CMakeFiles/install/strip.util
 
 # =============================================================================
-# Write statements declared in CMakeLists.txt:
-# C:/Users/stas/CLionProjects/search_engine/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for EXECUTABLE target search_engine
-
-
-#############################################
-# Order-only phony target for search_engine
-
-build cmake_object_order_depends_target_search_engine: phony || src/CMakeFiles/search_engine.dir
-
-build src/CMakeFiles/search_engine.dir/main.cpp.obj: CXX_COMPILER__search_engine_Debug C$:/Users/stas/CLionProjects/search_engine/src/main.cpp || cmake_object_order_depends_target_search_engine
-  DEP_FILE = src\CMakeFiles\search_engine.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
-  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include
-  OBJECT_DIR = src\CMakeFiles\search_engine.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\search_engine.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target search_engine
-
-
-#############################################
-# Link the executable src\search_engine.exe
-
-build src/search_engine.exe: CXX_EXECUTABLE_LINKER__search_engine_Debug src/CMakeFiles/search_engine.dir/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = src\CMakeFiles\search_engine.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = src\search_engine.exe
-  TARGET_IMPLIB = src\libsearch_engine.dll.a
-  TARGET_PDB = search_engine.exe.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build src/edit_cache: phony src/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\stas\CLionProjects\search_engine -BC:\Users\stas\CLionProjects\search_engine\cmake-build-debug"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build src/list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build src/CMakeFiles/install.util: CUSTOM_COMMAND src/all
-  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build src/install: phony src/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build src/CMakeFiles/install/local.util: CUSTOM_COMMAND src/all
-  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build src/install/local: phony src/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build src/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/all
-  COMMAND = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build src/install/strip: phony src/CMakeFiles/install/strip.util
-
-# =============================================================================
 # Target aliases.
 
-build Google_Tests_run: phony Google_tests/Google_Tests_run.exe
+build Google_Tests_run: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe
 
-build Google_Tests_run.exe: phony Google_tests/Google_Tests_run.exe
+build Google_Tests_run.exe: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe
 
 build gmock: phony lib/libgmock.a
 
@@ -744,9 +857,9 @@ build libgtest.a: phony lib/libgtest.a
 
 build libgtest_main.a: phony lib/libgtest_main.a
 
-build search_engine: phony src/search_engine.exe
+build search_engine: phony C$:/Users/stas/CLionProjects/search_engine/search_engine.exe
 
-build search_engine.exe: phony src/search_engine.exe
+build search_engine.exe: phony C$:/Users/stas/CLionProjects/search_engine/search_engine.exe
 
 # =============================================================================
 # Folder targets.
@@ -756,14 +869,14 @@ build search_engine.exe: phony src/search_engine.exe
 #############################################
 # Folder: C:/Users/stas/CLionProjects/search_engine/cmake-build-debug
 
-build all: phony nlohmann_json/all Google_tests/all src/all
+build all: phony nlohmann_json/all src/all Google_tests/all
 
 # =============================================================================
 
 #############################################
 # Folder: C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests
 
-build Google_tests/all: phony Google_tests/Google_Tests_run.exe Google_tests/lib/all
+build Google_tests/all: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe Google_tests/lib/all
 
 # =============================================================================
 
@@ -798,7 +911,7 @@ build nlohmann_json/all: phony
 #############################################
 # Folder: C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/src
 
-build src/all: phony src/search_engine.exe
+build src/all: phony C$:/Users/stas/CLionProjects/search_engine/search_engine.exe
 
 # =============================================================================
 # Built-in targets

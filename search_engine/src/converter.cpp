@@ -2,8 +2,8 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "converter.h"
 #include "nlohmann/json.hpp"
+#include "converter.h"
 
 const char *MissingConfigFieldException::what() const noexcept {
         return "config file is empty";
@@ -22,7 +22,7 @@ ConverterJSON::ConverterJSON() = default;
 */
 std::vector<std::string> ConverterJSON::GetTextDocuments() {
     //-----------------------config----------------------------
-    std::ifstream file(R"(..\..\config\config.json)");
+    std::ifstream file("config\\config.json");
     if (!file.is_open())
         throw NoFileConfigJsonException();
 
@@ -35,7 +35,7 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
     //-----------------------name------------------------------
     std::cout << "Starting " << dict["config"]["name"] << ".\n";
     //-----------------------version---------------------------
-    std::ifstream file2("..\\..\\CMakeLists.txt");
+    std::ifstream file2("CMakeLists.txt");
     if (!file2.is_open())
         std::cerr << "File CMakeLists.txt not open...\n";
 
@@ -64,12 +64,15 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
     std::map<std::string, std::vector<std::string>> longWords;
     std::map<std::string, std::vector<std::string>> incorrectWords;
     std::vector<std::string> listWithFileContents;//список с содержимым файлов(по строкам) перечисленных в config.json
-    for (const auto & i : dict["files"]) {
+    for (auto & i : dict["files"]) {
         int wordCount = 0;
-        //std::ifstream fileNameInTheFileField(i);
-        std::string fileNameBegin = ?; //вот непонятно что добавить в путь "../resources/file00"?".txt"
-        std::string fileName = i;
-        std::ifstream fileNameInTheFileField(fileNameBegin + fileName);
+        std::string strI = i;
+        size_t pos = strI.find("../");
+        strI.erase(pos, 3);
+        size_t pos1 = strI.find('/');
+        strI.erase(pos1, 1);
+        i = strI.insert(pos1, std::string("\\"));
+        std::ifstream fileNameInTheFileField(i);
         bool exitTemp = false;
         if (!fileNameInTheFileField.is_open()) {
             std::cerr << "The file " << i << " does not exist\n";
@@ -132,6 +135,7 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
         std::cout << "\n\tCorrect and run the program again.\n";
         exit(1);
     }
+
     return listWithFileContents;
 }
 /**
@@ -141,7 +145,7 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
 */
 int ConverterJSON::GetResponsesLimit() {
 
-    std::ifstream file(R"(..\..\config\config.json)");
+    std::ifstream file("config\\config.json");
     if (!file.is_open()) {
         std::cerr << "File \"config.json\" not open...\n";
         exit(1);
@@ -164,7 +168,7 @@ int ConverterJSON::GetResponsesLimit() {
 * @return возвращает список запросов из файла requests.json
 */
 std::vector<std::string> ConverterJSON::GetRequests() {
-    std::ifstream file(R"(..\..\config\requests.json)");
+    std::ifstream file("config\\requests.json");
     if (!file.is_open()) {
         std::cerr << "File \"requests.json\" not open...\n";
         exit(1);
@@ -198,27 +202,22 @@ std::vector<std::string> ConverterJSON::GetRequests() {
                 if (str[j] == ' ') {
                     strTemp.pop_back();
 
-                    bool found = false;
+                    if (!strTemp.empty())
+                        wordCountInTheQuery++; //счётчик слов в запросе
 
-                    if (strTemp.empty())
-                        found = true;
-
-                    for (int s = 0; s < strTemp.length() && !found; s++)
+                    for (int s = 0; s < strTemp.length(); s++)
                         if (strTemp[s] < 'a' || strTemp[s] > 'z') {
-                            found = true;
                             good = false;
-                            std::cout << "\n\tInvalid character found in words.\n";
+                            std::cout << "\n\tAn invalid character was found in request " << i + 1 << " of the word \"" << strTemp << "\".\n";
                         }
 
-                    if (!found)
-                        wordCountInTheQuery++; //счётчик слов в запросе
                     strTemp.erase();
                 }
             }
 
             requestList.push_back(str);
 
-            if (wordCountInTheQuery > 10) {
+            if (wordCountInTheQuery > 10) { //от одного до десяти слов
                 std::cout << "\n\tReduce the number of words in the " << i + 1 << " query by " <<
                           wordCountInTheQuery - 10 << " word.\n";
                 good = false;
@@ -244,13 +243,13 @@ std::vector<std::string> ConverterJSON::GetRequests() {
 */
 void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
 
-    std::ofstream file(R"(..\..\config\answers.json)");
+    std::ofstream file("config\\answers.json");
     if (!file.is_open()) {
         std::cout << "The answers.json file is missing, restarting the program will fix the error\n";
-        std::ofstream file2(R"(..\..\config\answers.json)");
+        std::ofstream file2("config\\answers.json");
         file2.close();
     } else {
-        std::ofstream file1(R"(..\..\config\answers.json)");
+        std::ofstream file1("config\\answers.json");
         file1.close();
     }
 
