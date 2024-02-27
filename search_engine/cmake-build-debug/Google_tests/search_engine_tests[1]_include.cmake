@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/search_engine_tests[1]_tests.cmake")
+  include("C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/search_engine_tests[1]_tests.cmake")
+else()
+  add_test(search_engine_tests_NOT_BUILT search_engine_tests_NOT_BUILT)
+endif()

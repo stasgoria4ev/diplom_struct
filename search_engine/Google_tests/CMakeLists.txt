@@ -1,6 +1,6 @@
-# 'Google_test' is the subproject name
-#project(Google_tests)
+# 'search_engine_tests' is the subproject name
 cmake_minimum_required(VERSION 3.24)
+project(search_engine_tests VERSION 1.0)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -15,11 +15,13 @@ set(TestsFiles
         server_tests.cpp
         )
 
-add_executable(Google_Tests_run ${TestsFiles} ${SrcFiles})
-target_link_libraries(Google_Tests_run nlohmann_json::nlohmann_json GTest::gtest_main)
+add_executable(search_engine_tests)
+target_sources(search_engine_tests PRIVATE ${TestsFiles} ${SrcFiles})
+
+target_link_libraries(search_engine_tests nlohmann_json::nlohmann_json GTest::gtest_main)
 include(GoogleTest)
-target_include_directories(Google_Tests_run PUBLIC ${MY_INCLUDE_DIR})
-gtest_discover_tests(Google_Tests_run)
+target_include_directories(search_engine_tests PUBLIC ${MY_INCLUDE_DIR})
+gtest_discover_tests(search_engine_tests)
 
 set(gtest_disable_pthreads on)
 # 'lib' is the folder with Google Test sources

@@ -1,6 +1,6 @@
 #include <string>
-#include <vector>
 #include <map>
+#include <vector>
 #include <thread>
 #include "inverted_index.h"
 

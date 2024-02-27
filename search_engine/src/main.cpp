@@ -1,6 +1,8 @@
-#include "converter.cpp"
-#include "inverted_index.cpp"
-#include "server.cpp"
+#include <iostream>
+#include <vector>
+#include "converter.h"
+#include "inverted_index.h"
+#include "server.h"
 
 int main() {
     ConverterJSON converterJSON;

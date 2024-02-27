@@ -213,6 +213,27 @@ build nlohmann_json/install/strip: phony nlohmann_json/CMakeFiles/install/strip.
 
 build cmake_object_order_depends_target_search_engine: phony || src/CMakeFiles/search_engine.dir
 
+build src/CMakeFiles/search_engine.dir/inverted_index.cpp.obj: CXX_COMPILER__search_engine_Debug C$:/Users/stas/CLionProjects/search_engine/src/inverted_index.cpp || cmake_object_order_depends_target_search_engine
+  DEP_FILE = src\CMakeFiles\search_engine.dir\inverted_index.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include
+  OBJECT_DIR = src\CMakeFiles\search_engine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\search_engine.dir
+
+build src/CMakeFiles/search_engine.dir/server.cpp.obj: CXX_COMPILER__search_engine_Debug C$:/Users/stas/CLionProjects/search_engine/src/server.cpp || cmake_object_order_depends_target_search_engine
+  DEP_FILE = src\CMakeFiles\search_engine.dir\server.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include
+  OBJECT_DIR = src\CMakeFiles\search_engine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\search_engine.dir
+
+build src/CMakeFiles/search_engine.dir/converter.cpp.obj: CXX_COMPILER__search_engine_Debug C$:/Users/stas/CLionProjects/search_engine/src/converter.cpp || cmake_object_order_depends_target_search_engine
+  DEP_FILE = src\CMakeFiles\search_engine.dir\converter.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -IC:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include
+  OBJECT_DIR = src\CMakeFiles\search_engine.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\search_engine.dir
+
 build src/CMakeFiles/search_engine.dir/main.cpp.obj: CXX_COMPILER__search_engine_Debug C$:/Users/stas/CLionProjects/search_engine/src/main.cpp || cmake_object_order_depends_target_search_engine
   DEP_FILE = src\CMakeFiles\search_engine.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
@@ -228,7 +249,7 @@ build src/CMakeFiles/search_engine.dir/main.cpp.obj: CXX_COMPILER__search_engine
 #############################################
 # Link the executable C:\Users\stas\CLionProjects\search_engine\search_engine.exe
 
-build C$:/Users/stas/CLionProjects/search_engine/search_engine.exe: CXX_EXECUTABLE_LINKER__search_engine_Debug src/CMakeFiles/search_engine.dir/main.cpp.obj
+build C$:/Users/stas/CLionProjects/search_engine/search_engine.exe: CXX_EXECUTABLE_LINKER__search_engine_Debug src/CMakeFiles/search_engine.dir/inverted_index.cpp.obj src/CMakeFiles/search_engine.dir/server.cpp.obj src/CMakeFiles/search_engine.dir/converter.cpp.obj src/CMakeFiles/search_engine.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\search_engine.dir
@@ -321,67 +342,67 @@ build src/install/strip: phony src/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target Google_Tests_run
+# Object build statements for EXECUTABLE target search_engine_tests
 
 
 #############################################
-# Order-only phony target for Google_Tests_run
+# Order-only phony target for search_engine_tests
 
-build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_search_engine_tests: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/index_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/index_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\index_tests.cpp.obj.d
+build Google_tests/CMakeFiles/search_engine_tests.dir/index_tests.cpp.obj: CXX_COMPILER__search_engine_tests_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/index_tests.cpp || cmake_object_order_depends_target_search_engine_tests
+  DEP_FILE = Google_tests\CMakeFiles\search_engine_tests.dir\index_tests.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/server_tests.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/server_tests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\server_tests.cpp.obj.d
+build Google_tests/CMakeFiles/search_engine_tests.dir/server_tests.cpp.obj: CXX_COMPILER__search_engine_tests_Debug C$:/Users/stas/CLionProjects/search_engine/Google_tests/server_tests.cpp || cmake_object_order_depends_target_search_engine_tests
+  DEP_FILE = Google_tests\CMakeFiles\search_engine_tests.dir\server_tests.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/inverted_index.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/src/inverted_index.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src\inverted_index.cpp.obj.d
+build Google_tests/CMakeFiles/search_engine_tests.dir/__/src/inverted_index.cpp.obj: CXX_COMPILER__search_engine_tests_Debug C$:/Users/stas/CLionProjects/search_engine/src/inverted_index.cpp || cmake_object_order_depends_target_search_engine_tests
+  DEP_FILE = Google_tests\CMakeFiles\search_engine_tests.dir\__\src\inverted_index.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src
+  OBJECT_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\search_engine_tests.dir\__\src
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/server.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/src/server.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src\server.cpp.obj.d
+build Google_tests/CMakeFiles/search_engine_tests.dir/__/src/server.cpp.obj: CXX_COMPILER__search_engine_tests_Debug C$:/Users/stas/CLionProjects/search_engine/src/server.cpp || cmake_object_order_depends_target_search_engine_tests
+  DEP_FILE = Google_tests\CMakeFiles\search_engine_tests.dir\__\src\server.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src
+  OBJECT_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\search_engine_tests.dir\__\src
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/converter.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:/Users/stas/CLionProjects/search_engine/src/converter.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src\converter.cpp.obj.d
+build Google_tests/CMakeFiles/search_engine_tests.dir/__/src/converter.cpp.obj: CXX_COMPILER__search_engine_tests_Debug C$:/Users/stas/CLionProjects/search_engine/src/converter.cpp || cmake_object_order_depends_target_search_engine_tests
+  DEP_FILE = Google_tests\CMakeFiles\search_engine_tests.dir\__\src\converter.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/stas/CLionProjects/search_engine/include -IC:/Users/stas/CLionProjects/search_engine/nlohmann_json/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest/include -isystem C:/Users/stas/CLionProjects/search_engine/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir\__\src
+  OBJECT_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\search_engine_tests.dir\__\src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Google_Tests_run
+# Link build statements for EXECUTABLE target search_engine_tests
 
 
 #############################################
-# Link the executable C:\Users\stas\CLionProjects\search_engine\Google_tests\Google_Tests_run.exe
+# Link the executable C:\Users\stas\CLionProjects\search_engine\Google_tests\search_engine_tests.exe
 
-build C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe Google_tests/Google_Tests_run[1]_tests.cmake | ${cmake_ninja_workdir}Google_tests/Google_Tests_run[1]_tests.cmake: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/index_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/server_tests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/inverted_index.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/server.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/__/src/converter.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build C$:/Users/stas/CLionProjects/search_engine/Google_tests/search_engine_tests.exe Google_tests/search_engine_tests[1]_tests.cmake | ${cmake_ninja_workdir}Google_tests/search_engine_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__search_engine_tests_Debug Google_tests/CMakeFiles/search_engine_tests.dir/index_tests.cpp.obj Google_tests/CMakeFiles/search_engine_tests.dir/server_tests.cpp.obj Google_tests/CMakeFiles/search_engine_tests.dir/__/src/inverted_index.cpp.obj Google_tests/CMakeFiles/search_engine_tests.dir/__/src/server.cpp.obj Google_tests/CMakeFiles/search_engine_tests.dir/__/src/converter.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
-  POST_BUILD = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -D TEST_TARGET=Google_Tests_run -D TEST_EXECUTABLE=C:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=Google_Tests_run_TESTS -D CTEST_FILE=C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/Google_Tests_run[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/GoogleTestAddTests.cmake""
+  OBJECT_DIR = Google_tests\CMakeFiles\search_engine_tests.dir
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\stas\CLionProjects\search_engine\cmake-build-debug\Google_tests && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -D TEST_TARGET=search_engine_tests -D TEST_EXECUTABLE=C:/Users/stas/CLionProjects/search_engine/Google_tests/search_engine_tests.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=search_engine_tests_TESTS -D CTEST_FILE=C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/search_engine_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/GoogleTestAddTests.cmake""
   PRE_LINK = cd .
   RESTAT = 1
-  TARGET_FILE = C:\Users\stas\CLionProjects\search_engine\Google_tests\Google_Tests_run.exe
-  TARGET_IMPLIB = Google_tests\libGoogle_Tests_run.dll.a
-  TARGET_PDB = Google_Tests_run.exe.dbg
+  TARGET_FILE = C:\Users\stas\CLionProjects\search_engine\Google_tests\search_engine_tests.exe
+  TARGET_IMPLIB = Google_tests\libsearch_engine_tests.dll.a
+  TARGET_PDB = search_engine_tests.exe.dbg
 
 
 #############################################
@@ -837,10 +858,6 @@ build Google_tests/lib/googletest/install/strip: phony Google_tests/lib/googlete
 # =============================================================================
 # Target aliases.
 
-build Google_Tests_run: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe
-
-build Google_Tests_run.exe: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe
-
 build gmock: phony lib/libgmock.a
 
 build gmock_main: phony lib/libgmock_main.a
@@ -861,6 +878,10 @@ build search_engine: phony C$:/Users/stas/CLionProjects/search_engine/search_eng
 
 build search_engine.exe: phony C$:/Users/stas/CLionProjects/search_engine/search_engine.exe
 
+build search_engine_tests: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/search_engine_tests.exe
+
+build search_engine_tests.exe: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/search_engine_tests.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -876,7 +897,7 @@ build all: phony nlohmann_json/all src/all Google_tests/all
 #############################################
 # Folder: C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests
 
-build Google_tests/all: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/Google_Tests_run.exe Google_tests/lib/all
+build Google_tests/all: phony C$:/Users/stas/CLionProjects/search_engine/Google_tests/search_engine_tests.exe Google_tests/lib/all
 
 # =============================================================================
 

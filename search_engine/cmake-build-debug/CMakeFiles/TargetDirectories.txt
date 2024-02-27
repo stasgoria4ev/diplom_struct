@@ -20,7 +20,7 @@ C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/src/CMakeFiles/list_
 C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/src/CMakeFiles/install.dir
 C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/src/CMakeFiles/install/local.dir
 C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/src/CMakeFiles/install/strip.dir
-C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/CMakeFiles/Google_Tests_run.dir
+C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/CMakeFiles/search_engine_tests.dir
 C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/CMakeFiles/test.dir
 C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/CMakeFiles/edit_cache.dir
 C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/CMakeFiles/rebuild_cache.dir

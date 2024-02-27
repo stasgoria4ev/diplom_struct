@@ -1,5 +1,4 @@
 #include <string>
-#include <vector>
 #include <iostream>
 #include <fstream>
 #include "nlohmann/json.hpp"
@@ -15,6 +14,13 @@ const char* NoFileConfigJsonException::what() const noexcept {
 
 ConverterJSON::ConverterJSON() = default;
 
+nlohmann::json ConverterJSON::FileDict(std::ifstream& file) {
+    nlohmann::json dict;
+    file >> dict;
+    file.close();
+    return dict;
+}
+
 /**
 * Метод получения содержимого файлов
 * @return Возвращает список с содержимым файлов перечисленных
@@ -22,13 +28,11 @@ ConverterJSON::ConverterJSON() = default;
 */
 std::vector<std::string> ConverterJSON::GetTextDocuments() {
     //-----------------------config----------------------------
-    std::ifstream file("config\\config.json");
+    std::ifstream file("config/config.json");
     if (!file.is_open())
         throw NoFileConfigJsonException();
 
-    nlohmann::json dict;
-    file >> dict;
-    file.close();
+    nlohmann::json dict = FileDict(file);
 
     if (dict["config"].is_null() || dict["config"].empty())
         throw MissingConfigFieldException();
@@ -71,7 +75,7 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
         strI.erase(pos, 3);
         size_t pos1 = strI.find('/');
         strI.erase(pos1, 1);
-        i = strI.insert(pos1, std::string("\\"));
+        i = strI.insert(pos1, std::string("/"));
         std::ifstream fileNameInTheFileField(i);
         bool exitTemp = false;
         if (!fileNameInTheFileField.is_open()) {
@@ -145,7 +149,7 @@ std::vector<std::string> ConverterJSON::GetTextDocuments() {
 */
 int ConverterJSON::GetResponsesLimit() {
 
-    std::ifstream file("config\\config.json");
+    std::ifstream file("config/config.json");
     if (!file.is_open()) {
         std::cerr << "File \"config.json\" not open...\n";
         exit(1);
@@ -168,15 +172,13 @@ int ConverterJSON::GetResponsesLimit() {
 * @return возвращает список запросов из файла requests.json
 */
 std::vector<std::string> ConverterJSON::GetRequests() {
-    std::ifstream file("config\\requests.json");
+    std::ifstream file("config/requests.json");
     if (!file.is_open()) {
         std::cerr << "File \"requests.json\" not open...\n";
         exit(1);
     }
 
-    nlohmann::json dict;
-    file >> dict;
-    file.close();
+    nlohmann::json dict = FileDict(file);
 
     int numberOfRequests1000 = 1000;
 
@@ -243,13 +245,14 @@ std::vector<std::string> ConverterJSON::GetRequests() {
 */
 void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
 
-    std::ofstream file("config\\answers.json");
+    std::string confAns = "config/answers.json";
+
+    std::ofstream file(confAns);
     if (!file.is_open()) {
-        std::cout << "The answers.json file is missing, restarting the program will fix the error\n";
-        std::ofstream file2("config\\answers.json");
-        file2.close();
+        std::cerr << "File \"answers.json\" is not writable...\n";
+        exit(1);
     } else {
-        std::ofstream file1("config\\answers.json");
+        std::ofstream file1(confAns);
         file1.close();
     }
 

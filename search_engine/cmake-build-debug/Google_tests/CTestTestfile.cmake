@@ -4,5 +4,5 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-include("C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/Google_Tests_run[1]_include.cmake")
+include("C:/Users/stas/CLionProjects/search_engine/cmake-build-debug/Google_tests/search_engine_tests[1]_include.cmake")
 subdirs("lib")

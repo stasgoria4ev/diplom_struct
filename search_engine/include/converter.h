@@ -1,5 +1,7 @@
 #pragma once
 
+#include "nlohmann/json.hpp"
+
 class MissingConfigFieldException: public std::exception {
 public:
     const char* what() const noexcept override;
@@ -17,6 +19,8 @@ class ConverterJSON {
 
 public:
     ConverterJSON();
+
+    nlohmann::json FileDict(std::ifstream& file);
 
 /**
 * Метод получения содержимого файлов
