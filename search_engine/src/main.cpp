@@ -59,4 +59,5 @@ int main() {
         std::cerr << "Some exception occurred in requests.json...\n";
         exit(1);
     }
+    std::cout << "SUCCESS. Ending \"SkillboxSearchEngine\".\n";
 }
